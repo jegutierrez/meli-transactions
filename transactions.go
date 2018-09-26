@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math"
 	"math/rand"
+	"os"
 )
 
 // Transaction is used to parse transaction logs.
@@ -136,7 +137,10 @@ func printPerceltile(percentile float64, value float64) {
 }
 
 func main() {
-	fileName := "movements.log"
+	if len(os.Args) < 2 {
+		panic("You must provide the filename as param")
+	}
+	fileName := os.Args[1]
 	ts := GetTransactionsFromFile(fileName)
 	rs := MeanByOperationType(&ts)
 	printMean(rs)
