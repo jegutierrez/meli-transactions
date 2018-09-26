@@ -22,6 +22,18 @@ Bonus:
 
 - No hay limitaciones de memoria
 
+## Compilar y ejecutar
+
+```bash
+go build
+```
+
+y despues
+
+```bash
+./meli-transactions movements.log
+```
+
 ## Solucion
 
 - Para el promedio de movimientos por operacion
